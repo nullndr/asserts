@@ -1,0 +1,27 @@
+{
+  "name": "@nullndr/asserts",
+  "version": "1.0.0",
+  "description": "An npm package with usefull typescript assert functions",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nullndr/asserts.git"
+  },
+  "keywords": [
+    "typescript",
+    "assert",
+    "invariant"
+  ],
+  "author": "Andrea Foletto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nullndr/asserts/issues"
+  },
+  "homepage": "https://github.com/nullndr/asserts#readme",
+  "dependencies": {
+    "typescript": "4.6"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/nullndr"
+  }
+}
