@@ -50,6 +50,7 @@ List of functions:
 
     case "unionB": {
       console.log("I found UnionB");
+      break;
     }
 
     default: {
