@@ -13,7 +13,7 @@
     "invariant"
   ],
   "author": "Andrea Foletto",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/nullndr/asserts/issues"
   },
