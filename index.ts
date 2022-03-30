@@ -9,7 +9,7 @@ type ErrorOption = {
 type Option = MessageOption | ErrorOption;
 
 /**
- * assert that a value is not null
+ * assert that a value is not null or undefined
  *
  * ```typescript
  * const user: User | null = await fetchUser(endpoint)
@@ -24,8 +24,8 @@ type Option = MessageOption | ErrorOption;
  * @param option an optional message or an optional error
  * @return assert that value is T, throw if null
  */
-export function assertNotNull<T>(
-  value: T | null,
+export function assertDefined<T>(
+  value: T | null | undefined,
   option?: Option
 ): asserts value is T {
   if (option == null) {

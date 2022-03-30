@@ -4,18 +4,18 @@ An npm package with useful assert functions.
 
 List of functions:
 
-- `assertNotNull`
+- `assertDefined`
 
   ```typescript
-  import { assertNotNull } from "asserts";
+  import { assertDefined } from "asserts";
   ```
 
-  Assert that a value is not null
+  Assert that a value is not null or undefined
 
   ```typescript
   const user: User | null = await fetchUser(endpoint);
 
-  assertNotNull(user);
+  assertDefined(user);
 
   // now we are sure that `user` is of User type
   const userId = user.id;
