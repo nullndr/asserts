@@ -6,7 +6,7 @@ type ErrorOption = {
   error: Error;
 };
 
-type Option = MessageOption | ErrorOption;
+export type AssertOption = MessageOption | ErrorOption;
 
 /**
  * assert that a value is not null or undefined
@@ -22,11 +22,12 @@ type Option = MessageOption | ErrorOption;
  *
  * @param value
  * @param option an optional message or an optional error
+ * { message: string } | { error: Error }
  * @return assert that value is T, throw if null
  */
 export function assertDefined<T>(
   value: T | null | undefined,
-  option?: Option
+  option?: AssertOption
 ): asserts value is T {
   if (option == null) {
     if (value == null) {
@@ -54,7 +55,7 @@ export function assertDefined<T>(
  * @param option an optional message or an optional error
  * @return never return, just throw an error
  */
-export function assertNever(value: never, option?: Option): never {
+export function assertNever(value: never, option?: AssertOption): never {
   if (option == null) {
     throw new Error(`Unexpected value: ${value}`);
   }
