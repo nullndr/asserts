@@ -1,7 +1,7 @@
 {
   "name": "@nullndr/asserts",
   "version": "1.0.0",
-  "description": "An npm package with usefull typescript assert functions",
+  "description": "An npm package with useful typescript assert functions",
   "main": "index.js",
   "repository": {
     "type": "git",
