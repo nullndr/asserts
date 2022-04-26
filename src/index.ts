@@ -9,6 +9,16 @@ type ErrorOption = {
 export type AssertOption = MessageOption | ErrorOption;
 
 /**
+ * Class that represents the default error if no option is provided
+ * or if is only provided the error message
+ */
+export class AssertFail extends Error {
+  constructor(message?: string) {
+    super(message);
+  }
+}
+
+/**
  * assert that a value is not null or undefined
  *
  * ```typescript
@@ -31,14 +41,14 @@ export function assertDefined<T>(
 ): asserts value is T {
   if (option == null) {
     if (value == null) {
-      throw new Error();
+      throw new AssertFail();
     }
     return;
   }
 
   if ("message" in option) {
     if (value == null) {
-      throw new Error(option.message);
+      throw new AssertFail(option.message);
     }
     return;
   }
@@ -57,12 +67,32 @@ export function assertDefined<T>(
  */
 export function assertNever(value: never, option?: AssertOption): never {
   if (option == null) {
-    throw new Error(`Unexpected value: ${value}`);
+    throw new AssertFail(`Unexpected value: ${value}`);
   }
 
   if ("message" in option) {
-    throw new Error(option.message);
+    throw new AssertFail(option.message);
   }
 
   throw option.error;
+}
+
+/**
+ * assert that a condition results true
+ *
+ * @param condition
+ * @param option an optional message or an optional error
+ * @return assert that condition is true, throw otherwise
+ */
+export function assert(
+  condition: boolean,
+  option?: AssertOption
+): asserts condition is true {
+  if (!condition) {
+    if (option == null) {
+      throw new AssertFail();
+    }
+
+    throw "message" in option ? new AssertFail(option.message) : option.error;
+  }
 }

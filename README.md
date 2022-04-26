@@ -4,6 +4,18 @@ An npm package with useful assert functions.
 
 List of functions:
 
+- `assert`
+
+  ```typescript
+  import { assert } from "asserts";
+  ```
+
+  Assert that a condition is true
+
+  ```typescript
+  assert(user.id === 123);
+  ```
+
 - `assertDefined`
 
   ```typescript
@@ -58,3 +70,7 @@ List of functions:
     }
   }
   ```
+
+Errors:
+
+All functions inside this package raise an `AssertFail` object once an assertion fails.
