@@ -10,7 +10,7 @@ export type AssertOption = MessageOption | ErrorOption;
 
 /**
  * Class that represents the default error if no option is provided
- * or if is only provided the error message
+ * or if it is only provided the error message
  */
 export class AssertFail extends Error {
   constructor(message?: string) {
@@ -32,12 +32,11 @@ export class AssertFail extends Error {
  *
  * @param value
  * @param option an optional message or an optional error
- * { message: string } | { error: Error }
  * @return assert that value is T, throw if null
  */
 export function assertDefined<T>(
   value: T | null | undefined,
-  option?: AssertOption
+  option?: AssertOption,
 ): asserts value is T {
   if (option == null) {
     if (value == null) {
@@ -86,7 +85,7 @@ export function assertNever(value: never, option?: AssertOption): never {
  */
 export function assert(
   condition: boolean,
-  option?: AssertOption
+  option?: AssertOption,
 ): asserts condition is true {
   if (!condition) {
     if (option == null) {

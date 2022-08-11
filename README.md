@@ -2,7 +2,7 @@
 
 An npm package with useful assert functions.
 
-List of functions:
+## Functions
 
 - `assert`
 
@@ -71,6 +71,6 @@ List of functions:
   }
   ```
 
-Errors:
+## Errors
 
 All functions inside this package raise an `AssertFail` object once an assertion fails.

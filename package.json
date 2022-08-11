@@ -4,7 +4,11 @@
   "description": "An npm package with useful typescript assert functions",
   "main": "./dist/index.js",
   "scripts": {
-    "build": "tsc"
+    "dev": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build"
   },
   "repository": {
     "type": "git",
@@ -21,8 +25,9 @@
     "url": "https://github.com/nullndr/asserts/issues"
   },
   "homepage": "https://github.com/nullndr/asserts#readme",
-  "dependencies": {
-    "typescript": "^4.7"
+  "devDependencies": {
+    "typescript": "^4.6",
+    "tsdx": "^0.14.1"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/nullndr",
