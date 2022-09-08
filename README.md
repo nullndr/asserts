@@ -1,5 +1,7 @@
 # TypeScript asserts
 
+> ⚠️ this repo is deprecated, please see [this](https://github.com/nullndr/tsutils) one 
+
 An npm package with useful assert functions.
 
 ## Functions
